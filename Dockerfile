@@ -6,7 +6,7 @@ COPY hello.go .
 
 RUN go mod init hello && \
   go mod tidy && \
-  go build .
+  go build -ldflags="-s -w" .
 
 FROM scratch
 WORKDIR /var/www
